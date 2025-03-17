@@ -1,0 +1,76 @@
+.popup_form_item {
+	position: relative;
+
+	&:not(:last-child) {
+		margin-bottom: 10px;
+	}
+
+	&:nth-last-child(2) {
+		margin-bottom: 25px;
+	}
+
+	&__icon {
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		width: 24px;
+		height: 24px;
+
+		svg path {
+			fill: var(--grey-color);
+			transition: fill .3s ease-in-out;
+		}
+	}
+
+	&__input {
+		border-radius: 8px;
+		border: 1px solid var(--grey-color);
+		padding: 15px 15px 15px 50px;
+		width: 100%;
+		max-width: 340px;
+		height: 56px;
+		font-size: 18px;
+		color: var(--black-color);
+		transition: border-color .3s ease-in-out;
+
+		@media (max-width: 590px) {
+			max-width: unset;
+		}
+
+		&::placeholder {
+			color: var(--grey-color);
+		}
+
+		&:hover,
+		&:focus {
+			border: 1px solid var(--hover-color);
+
+			+ span svg path {
+				fill: var(--hover-color);
+			}
+		}
+
+		&[data-error='true'] {
+			border: 1px solid var(--error-color);
+
+			+ span svg path {
+				fill: var(--error-color);
+			}
+		}
+	}
+
+	&__error {
+		position: absolute;
+		top: 2px;
+		left: 15px;
+		display: none;
+		color: var(--error-color);
+		font-size: 12px;
+		
+		&[data-error='true'] {
+			display: block;
+		}
+	}
+}
+
+

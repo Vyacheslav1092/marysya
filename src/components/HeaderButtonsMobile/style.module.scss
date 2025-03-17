@@ -1,0 +1,21 @@
+.mobile_wrap {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	
+	&__genres {
+		display: flex;
+	}
+	
+	&__search {
+		display: flex;
+		
+		svg path {
+			fill-opacity: 1;
+		}
+	}
+	
+	&__auth {
+		display: flex;
+	}
+}

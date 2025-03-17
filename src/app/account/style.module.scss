@@ -1,0 +1,84 @@
+.account_section {
+	padding-top: 65px;
+}
+
+.account_title {
+	margin-bottom: 65px;
+	
+	@media (max-width: 475px) {
+		margin-bottom: 40px;
+	}
+}
+
+.account_nav {
+	margin-bottom: 65px;
+	display: flex;
+	gap: 64px;
+	
+	@media (max-width: 475px) {
+		margin-bottom: 40px;
+		gap: 25px;
+	}
+	
+	&_item {
+		display: flex;
+		align-items: center;
+		height: 32px;
+		
+		&__button {
+			position: relative;
+			display: flex;
+			align-items: center;
+			font-family: 'PlayNormal', sans-serif;
+			font-weight: 400;
+			font-size: 14px;
+			color: rgba(255, 255, 255, .7);
+			transition: color .3s ease-in-out;
+			
+			@media (max-width: 475px) {
+				font-size: 24px;
+			}
+			
+			&:before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				bottom: -5px;
+				width: 0;
+				height: 1.5px;
+				background-color: transparent;
+				transition: background-color .3s ease-in-out,
+										width .3s ease-in-out;
+				transform: translateX(-50%);
+			}
+
+			svg path {
+				transition: fill .3s ease-in-out;
+			}
+			
+			svg {
+				margin-right: 8px;
+			}
+
+			&:hover {
+				color: #B4A9FF;
+				
+				&:before {
+					background-color: var(--hover-svg);
+					width: 100%;
+				}
+
+				svg path {
+					fill: var(--hover-svg);
+				}
+			}
+		}
+	}
+}
+
+.account_active {
+	&:before {
+		background-color: var(--hover-svg);
+		width: 100%;
+	}
+}

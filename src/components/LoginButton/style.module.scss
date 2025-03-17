@@ -1,0 +1,16 @@
+.login {
+	font-family: 'PlayNormal', sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 1.3;
+	color: var(--white-color);
+	transition: color .3s ease-in-out;
+
+	&:hover {
+		color: #6A5DC2;
+	}
+	
+	@media (max-width: 900px) {
+		display: none;
+	}
+}

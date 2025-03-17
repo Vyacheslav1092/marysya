@@ -1,0 +1,491 @@
+@font-face {
+	font-family: 'PlayNormal';
+	src: url("../../public/fonts/play-regular.woff") format("woff"),
+	url("../../public/fonts/play-regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PlayBold';
+	src: url("../../public/fonts/play-bold.woff") format("woff"),
+	url("../../public/fonts/play-bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+}
+
+:root {
+	--black-color: #000000;
+	--white-color: #ffffff;
+	--grey-color: rgba(0, 0, 0, 0.4);
+	--cornflower-color: #67A5EB;
+	--hover-color: #B4A9FF;
+	--error-color: #FF7575;
+	--bg-search: #393B3C;
+	--rate-perfect: #A59400;
+	--rate-good: #308E21;
+	--rate-nogood: #777777;
+	--rate-bad: #C82020;
+	--hover-button-color: #45526E;
+	--hover-default-color: #747474;
+	--hover-svg: #DC5DFC;
+	--hover-svg2: #B4A9FF;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-appearance: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+li,
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	color: inherit;
+	text-decoration-skip-ink: auto;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Make images easier to work with */
+img {
+	max-width: 100%;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+	margin-top: 1em;
+}
+
+a[role],
+div[role],
+button:hover,
+button:active,
+button:focus {
+	outline: none !important;
+	outline-offset: 0;
+}
+
+/* Remove excess padding and border in Firefox 4+ */
+button::-moz-focus-inner {
+	border: 0 !important;
+	padding: 0 !important;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	padding: 0;
+	border-style: none;
+}
+
+button {
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	overflow: visible;
+	background: transparent;
+
+	/* inherit font & color from ancestor */
+	color: inherit;
+	font: inherit;
+
+	/* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+	line-height: normal;
+
+	/* Corrects font smoothing for webkit */
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+
+	/* Corrects inability to style clickable `input` types in iOS */
+	-webkit-appearance: none;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+a, button, input, textarea {
+	outline: none;
+	background: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	border: none;
+}
+
+input,
+input:hover,
+input:active,
+input:focus {
+	outline: none;
+	border: none;
+	background: none;
+	/*IOS*/
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+textarea {
+	overflow: auto;
+	resize: vertical;
+}
+
+details > summary {
+	list-style: none;
+}
+
+summary {
+	display: block;
+	list-style-type: none;
+}
+
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration { display: none; }
+
+
+/* Bootstrap
+  ------------------------------------- */
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+	display: block;
+}
+
+[tabindex="-1"]:focus:not(:focus-visible) {
+	outline: 0 !important;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+
+abbr[title],
+abbr[data-original-title] {
+	text-decoration: underline;
+	-webkit-text-decoration: underline dotted;
+	text-decoration: underline dotted;
+	cursor: help;
+	border-bottom: 0;
+	-webkit-text-decoration-skip-ink: none;
+	text-decoration-skip-ink: none;
+}
+
+/*typography --------------------------------*/
+.h1 {
+	font-size: 50px;
+	line-height: 50px;
+
+	@media (max-width: 1439px) {
+		font-size: 36px;
+		line-height: 36px;
+	}
+
+	@media (max-width: 891px) {
+		font-size: 26px;
+		line-height: 1.1;
+	}
+
+	@media (max-width: 664px) {
+		font-size: 18px;
+	}
+}
+
+.h2 {
+	font-family: 'PlayBold', sans-serif;
+	font-size: 48px;
+	line-height: 1.1;
+}
+
+.h3 {
+	font-family: 'PlayBold', sans-serif;
+	font-size: 40px;
+	line-height: 48px;
+}
+
+/*main element styles -----------------------*/
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	font-family: PlayNormal, sans-serif;
+	font-size: 18px;
+	line-height: 1.3;
+	color: var(--white-color);
+	background: linear-gradient(180deg, #000000 0%, rgba(39, 36, 36, 0.7) 100%),
+	linear-gradient(178.73deg, rgba(39, 135, 245, 1.18) -17.53%, rgba(163, 147, 245, 1.18) 131.74%);
+	overflow-x: hidden;
+}
+
+section {
+	position: relative;
+}
+
+.container {
+	padding: 0 20px;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1320px;
+}
+
+.main_button {
+	padding: 0 15px;
+	border-radius: 28px;
+	width: 100%;
+	height: 56px;
+	font-family: 'PlayBold', sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1.3;
+	color: var(--white-color);
+	background-color: var(--cornflower-color);
+	transition: color .3s ease-in-out,
+	background-color .3s ease-in-out;
+}
+
+.main_button:hover,
+.main_button:focus {
+	color: rgba(255, 255, 255, .5);
+	background-color: var(--hover-button-color);
+}
+
+.default_button {
+	padding: 0 15px;
+	border-radius: 28px;
+	width: 100%;
+	height: 56px;
+	font-family: 'PlayBold', sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1.3;
+	color: var(--white-color);
+	background-color: var(--bg-search);
+	transition: color .3s ease-in-out,
+	background-color .3s ease-in-out;
+}
+
+.default_button:hover,
+.default_button:focus {
+	color: rgba(255, 255, 255, .5);
+	background-color: var(--hover-default-color);
+}
+
+.default_button:active {
+	color: var(--black-color);
+	background-color: var(--white-color);
+}
+
+.small_button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 15px;
+	border-radius: 28px;
+	border: 1px solid rgba(0, 0, 0, .4);
+	width: 68px;
+	height: 56px;
+	background-color: var(--bg-search);
+}
+
+.small_button svg path {
+	transition: fill .3s ease-in-out;
+}
+
+.small_button:hover svg path {
+	fill: var(--hover-svg2);
+}
+
+.small_button[data-favorit='true'] svg path {
+	fill: var(--hover-svg2);
+}
+
+.nav_link {
+	position: relative;
+	display: block;
+	font-family: 'PlayNormal', sans-serif;
+	font-size: 24px;
+	line-height: 1.3;
+	color: var(--white-color);
+	transition: color .3s ease-in-out;
+
+	svg path {
+		transition: fill .3s ease-in-out;
+	}
+}
+
+.nav_link::before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -5px;
+	width: 0;
+	height: 1.5px;
+	background-color: transparent;
+	transition: background-color .3s ease-in-out,
+	width .3s ease-in-out;
+	transform: translateX(-50%);
+}
+
+.nav_link:hover {
+	color: #B4A9FF;
+
+	svg path {
+		fill: var(--hover-svg);
+	}
+}
+
+.nav_link:hover::before {
+	background-color: var(--hover-svg);
+	width: 100%;
+}
+
+.nav_active::before {
+	width: 100%;
+	background-color: var(--hover-svg);
+}
+
+.rate {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 16px;
+	padding-top: 1px;
+	width: 100%;
+	max-width: 50px;
+	height: 20px;
+	font-family: 'PlayBold', sans-serif;
+	font-size: 12px;
+	color: var(--white-color);
+	background-color: var(--black-color);
+}
+
+.rate_perfect {
+	background-color: var(--rate-perfect);
+}
+
+.rate_good {
+	background-color: var(--rate-good);
+}
+
+.rate_nogood {
+	background-color: var(--rate-nogood);
+}
+
+.rate_bad {
+	background-color: var(--rate-bad);
+}
+
+.rate svg {
+	margin-right: 3px;
+	margin-bottom: 2px;
+}
+
+.rotate svg {
+	animation: rotateIcon .3s ease-in-out;
+}
+
+@keyframes rotateIcon {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (max-width: 475px) {
+	.h2 {
+		font-size: 24px;	
+	}
+	
+	.rate {
+		max-width: 70px;
+		height: 32px;
+		font-size: 18px;
+	}
+	.rate svg {
+		margin-bottom: 4px;
+	}
+}
